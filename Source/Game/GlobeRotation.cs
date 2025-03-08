@@ -10,7 +10,7 @@ namespace Game;
 /// </summary>
 public class GlobeRotation : Script
 {
-    private float runSpeed = 20f, turnSpeed = 5f, mouseInput, hInput, frwRotation;
+    private float runSpeed = 10f, turnSpeed = 5f, mouseInput, hInput, frwRotation;
     
     private bool weAreRunning = true;
     private AnimGraphParameter isRunning;
@@ -54,5 +54,6 @@ public class GlobeRotation : Script
         weAreRunning = true;
         Screen.CursorLock = CursorLockMode.Locked;
         Screen.CursorVisible = false;
+        startButton.IsActive = false;
     }
 }

@@ -105,9 +105,9 @@
 			"Name": "Sphere",
 			"Transform": {
 				"Scale": {
-					"X": 20.0,
-					"Y": 20.0,
-					"Z": 20.0
+					"X": 100.0,
+					"Y": 100.0,
+					"Z": 100.0
 				}
 			},
 			"Model": "dd86c4724bf734c4959d23b3c74faa05",
@@ -127,7 +127,7 @@
 			"TypeName": "Game.GlobeRotation",
 			"ParentID": "2df67197488d72bb21a17e93da9b9fee",
 			"V": {
-	"player": "322d7fdf4ef3cfee779584bf1507606c",
+	"player": "d2c29dec433bb80361f6b3896a9ab486",
 	"worldCenter": "88ece6404a724e4e9e692b97405a0582",
 	"camera": "b0d72c3746caebca055e1f921ca21c7c",
 	"startButton": "8e8397ee4bfdd37f5e90f48f9e6f0dcd"
@@ -152,14 +152,14 @@
 			"Name": "charBase"
 		},
 		{
-			"ID": "322d7fdf4ef3cfee779584bf1507606c",
+			"ID": "d2c29dec433bb80361f6b3896a9ab486",
 			"TypeName": "FlaxEngine.AnimatedModel",
 			"ParentID": "40cf928040fc5c0cb153c9aeabadd198",
 			"Name": "main character temp",
 			"Transform": {
 				"Translation": {
 					"X": 0.0,
-					"Y": 1000.0,
+					"Y": 5000.0,
 					"Z": 0.0
 				}
 			},
@@ -168,97 +168,97 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
 					},
 					{
-						"Material": "3d9b3a894c3b286d13391c8c0f67733c",
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -267,21 +267,34 @@
 			}
 		},
 		{
+			"ID": "895f70694bbcb5ea32be4e8b84d740a4",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "d2c29dec433bb80361f6b3896a9ab486",
+			"Name": "cam target",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 128.39306640625,
+					"Z": 0.0
+				}
+			}
+		},
+		{
 			"ID": "b0d72c3746caebca055e1f921ca21c7c",
 			"TypeName": "FlaxEngine.Camera",
-			"ParentID": "322d7fdf4ef3cfee779584bf1507606c",
+			"ParentID": "895f70694bbcb5ea32be4e8b84d740a4",
 			"Name": "Camera",
 			"Transform": {
 				"Translation": {
 					"X": 0.0,
-					"Y": 252.6727294921875,
+					"Y": 481.27978515625,
 					"Z": -284.12744140625
 				},
 				"Orientation": {
-					"X": 0.17314638197422028,
+					"X": 0.3660270869731903,
 					"Y": 0.0,
 					"Z": 0.0,
-					"W": 0.9848961234092712
+					"W": 0.9306042194366455
 				}
 			},
 			"StaticFlags": 0
@@ -540,6 +553,87 @@
 	"Visible": true,
 	"AutoFocus": true
 }
+		},
+		{
+			"ID": "424dbd4d440c042c72646bb7d98811b0",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "POIs"
+		},
+		{
+			"ID": "7b2524f243967f6c4077fdbb28a3acd4",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "424dbd4d440c042c72646bb7d98811b0",
+			"Name": "Tokyo",
+			"Transform": {
+				"Orientation": {
+					"X": 0.5821195244789124,
+					"Y": 0.20043984055519104,
+					"Z": -0.25655120611190796,
+					"W": 0.7450787425041199
+				}
+			}
+		},
+		{
+			"ID": "dda9fce145e674f42bc784bdc80dd2c3",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "7b2524f243967f6c4077fdbb28a3acd4",
+			"Name": "Temple",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 4959.0,
+					"Z": 0.0
+				}
+			},
+			"Model": "16cf1a10482f99ffbf98b89f831e490a",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					},
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					},
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					},
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					},
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "d99d23ac44e33de21e04ad918f62112b",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "dda9fce145e674f42bc784bdc80dd2c3",
+			"Name": "spawnPoint",
+			"Transform": {
+				"Translation": {
+					"X": -0.000980377197265625,
+					"Y": 0.00083160400390625,
+					"Z": -303.91650390625
+				}
+			}
 		}
 	]
 }
