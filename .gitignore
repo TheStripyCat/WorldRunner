@@ -43,3 +43,6 @@ _ReSharper*/
 
 # Ignore Nuget packages folder
 packages/
+Content/main character temp.flax
+Content/idle anim.flax
+Content/run anim.flax
