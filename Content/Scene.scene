@@ -99,47 +99,6 @@
 			"Mode": 0
 		},
 		{
-			"ID": "2df67197488d72bb21a17e93da9b9fee",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "Sphere",
-			"Transform": {
-				"Scale": {
-					"X": 100.0,
-					"Y": 100.0,
-					"Z": 100.0
-				}
-			},
-			"Model": "dd86c4724bf734c4959d23b3c74faa05",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "773da1cd495cd1477d080c8e29e4a5f9",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
-		},
-		{
-			"ID": "7c29fbbd49d4d008a0ebdab3563e9ca9",
-			"TypeName": "Game.GlobeRotation",
-			"ParentID": "2df67197488d72bb21a17e93da9b9fee",
-			"V": {
-	"player": "d2c29dec433bb80361f6b3896a9ab486",
-	"worldCenter": "88ece6404a724e4e9e692b97405a0582",
-	"camera": "b0d72c3746caebca055e1f921ca21c7c",
-	"startButton": "8e8397ee4bfdd37f5e90f48f9e6f0dcd"
-}
-		},
-		{
-			"ID": "70a9b13648d3be11937de9a5f5294a3d",
-			"TypeName": "FlaxEngine.SphereCollider",
-			"ParentID": "2df67197488d72bb21a17e93da9b9fee",
-			"Name": "SphereCollider"
-		},
-		{
 			"ID": "88ece6404a724e4e9e692b97405a0582",
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "74a68a984824b4510d12589f199ad68f",
@@ -149,7 +108,27 @@
 			"ID": "40cf928040fc5c0cb153c9aeabadd198",
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "88ece6404a724e4e9e692b97405a0582",
-			"Name": "charBase"
+			"Name": "charBase",
+			"Transform": {
+				"Orientation": {
+					"X": 0.3488747179508209,
+					"Y": 0.030522581189870834,
+					"Z": -0.08163635432720184,
+					"W": 0.9331079125404358
+				}
+			}
+		},
+		{
+			"ID": "3b095d9d40de953b4df2adb73d649bf1",
+			"TypeName": "Game.GlobeRotation",
+			"ParentID": "40cf928040fc5c0cb153c9aeabadd198",
+			"V": {
+	"player": "d2c29dec433bb80361f6b3896a9ab486",
+	"startButton": "8e8397ee4bfdd37f5e90f48f9e6f0dcd",
+	"shipTicketIcon": "b681e7a344f3b6ed470ced825483fe89",
+	"trainTicketIcon": "9b1f92c441cc62bf22b4fc82499e2c88",
+	"playerTrigger": "dbd0f3b34d0d7696dcfd47bb6b7e631c"
+}
 		},
 		{
 			"ID": "d2c29dec433bb80361f6b3896a9ab486",
@@ -159,7 +138,7 @@
 			"Transform": {
 				"Translation": {
 					"X": 0.0,
-					"Y": 5000.0,
+					"Y": 5040.0,
 					"Z": 0.0
 				}
 			},
@@ -307,6 +286,40 @@
 			"Enabled": false
 		},
 		{
+			"ID": "a1d5bc55457a93cdb75f4bb9a6e86cf1",
+			"TypeName": "FlaxEngine.RigidBody",
+			"ParentID": "d2c29dec433bb80361f6b3896a9ab486",
+			"Name": "RigidBody",
+			"EnableGravity": false
+		},
+		{
+			"ID": "dbd0f3b34d0d7696dcfd47bb6b7e631c",
+			"TypeName": "FlaxEngine.CapsuleCollider",
+			"ParentID": "a1d5bc55457a93cdb75f4bb9a6e86cf1",
+			"Name": "PlayerTriggerCollider",
+			"Transform": {
+				"Translation": {
+					"X": 0.00000448121500085108,
+					"Y": 0.00032607329194433987,
+					"Z": 0.00036851054755970836
+				},
+				"Orientation": {
+					"X": -3.725290298461914e-9,
+					"Y": 5.960464477539063e-8,
+					"Z": 0.7071067690849304,
+					"W": 0.7071068286895752
+				}
+			},
+			"Tag": "Player",
+			"IsTrigger": true,
+			"Center": {
+				"X": 70.0,
+				"Y": 0.0,
+				"Z": 0.0
+			},
+			"Height": 198.0
+		},
+		{
 			"ID": "0b1407ff4038dc34504f418a666c67a9",
 			"TypeName": "FlaxEngine.UICanvas",
 			"ParentID": "74a68a984824b4510d12589f199ad68f",
@@ -432,6 +445,7 @@
 			"ID": "8e8397ee4bfdd37f5e90f48f9e6f0dcd",
 			"TypeName": "FlaxEngine.UIControl",
 			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"IsActive": false,
 			"Name": "StartButton",
 			"Transform": {
 				"Translation": {
@@ -550,8 +564,520 @@
 	},
 	"BackgroundBrush": null,
 	"Enabled": true,
-	"Visible": true,
+	"Visible": false,
 	"AutoFocus": true
+}
+		},
+		{
+			"ID": "9b1f92c441cc62bf22b4fc82499e2c88",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"IsActive": false,
+			"Name": "train ticket icon",
+			"Transform": {
+				"Translation": {
+					"X": 1001.0,
+					"Y": 20.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "b0bc243444b19ad74f04d7a001b2699d",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": -79.0,
+		"Right": 60.0,
+		"Top": 20.0,
+		"Bottom": 60.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": false,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "756da74e43ca09399b6a818c68813cba",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "9b1f92c441cc62bf22b4fc82499e2c88",
+			"Name": "key",
+			"Transform": {
+				"Translation": {
+					"X": -45.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "d3b8f80f40031c6a30472c9d7e2bbc5a",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": -45.0,
+		"Right": 30.0,
+		"Top": -30.0,
+		"Bottom": 30.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "9378ce81494c2d8f47d37bb4528823bc",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "9b1f92c441cc62bf22b4fc82499e2c88",
+			"Name": "button",
+			"Transform": {
+				"Translation": {
+					"X": -45.0,
+					"Y": 30.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "3b79f58d49a6876b3d51128d6a66f317",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": -45.0,
+		"Right": 30.0,
+		"Top": 0.0,
+		"Bottom": 30.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "b681e7a344f3b6ed470ced825483fe89",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"IsActive": false,
+			"Name": "ship ticket icon",
+			"Transform": {
+				"Translation": {
+					"X": 1001.0,
+					"Y": 90.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "1422ea5a4d20987aee76bb80ecb4585f",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": -79.0,
+		"Right": 60.0,
+		"Top": 90.0,
+		"Bottom": 60.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": false,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "779e8cb84a17f2bd30d411bc5ff6dbab",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "b681e7a344f3b6ed470ced825483fe89",
+			"Name": "key",
+			"Transform": {
+				"Translation": {
+					"X": -45.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "d3b8f80f40031c6a30472c9d7e2bbc5a",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": -45.0,
+		"Right": 30.0,
+		"Top": -30.0,
+		"Bottom": 30.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "27dcc95f41860ad5ea1d2fb8fe4d2acd",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "b681e7a344f3b6ed470ced825483fe89",
+			"Name": "button",
+			"Transform": {
+				"Translation": {
+					"X": -45.0,
+					"Y": 30.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "3b79f58d49a6876b3d51128d6a66f317",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": -45.0,
+		"Right": 30.0,
+		"Top": 0.0,
+		"Bottom": 30.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
 }
 		},
 		{
@@ -567,10 +1093,10 @@
 			"Name": "Tokyo",
 			"Transform": {
 				"Orientation": {
-					"X": 0.5821195244789124,
-					"Y": 0.20043984055519104,
-					"Z": -0.25655120611190796,
-					"W": 0.7450787425041199
+					"X": -0.3797213137149811,
+					"Y": -0.8528683185577393,
+					"Z": 0.3273853659629822,
+					"W": -0.1457611471414566
 				}
 			}
 		},
@@ -582,7 +1108,7 @@
 			"Transform": {
 				"Translation": {
 					"X": 0.0,
-					"Y": 4959.0,
+					"Y": 5010.0,
 					"Z": 0.0
 				}
 			},
@@ -629,11 +1155,839 @@
 			"Name": "spawnPoint",
 			"Transform": {
 				"Translation": {
-					"X": -0.000980377197265625,
-					"Y": 0.00083160400390625,
-					"Z": -303.91650390625
+					"X": 339.3957214355469,
+					"Y": 69.23590087890625,
+					"Z": -277.2901611328125
 				}
 			}
+		},
+		{
+			"ID": "1b86fab540d6dcc44ad13ca8b1a8c56c",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "d99d23ac44e33de21e04ad918f62112b",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "9fc4dd1e4f3bc518f1dbbfb99c7b4f40",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "world water",
+			"Model": "e0ce69bc4fbe9ce9dd67e9806d01cd13",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "63f2e2be4649686b3da2b89e588b7db0",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "e055083b405590b13c1a95a656a4e249",
+			"TypeName": "FlaxEngine.MeshCollider",
+			"ParentID": "9fc4dd1e4f3bc518f1dbbfb99c7b4f40",
+			"Name": "MeshCollider",
+			"Tag": "water",
+			"CollisionData": "1bfc333e4acc07aa77cfcfa71a8fa6c3"
+		},
+		{
+			"ID": "500057ee4a5750b1e608fa8b664bf3c9",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "world SA",
+			"Model": "a825804c4486753e379a72bf3a1249a1",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1ee9df9545bbfcc5ab7ae78b23a3ace9",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "2e867d184105aedc90be9189ab76a39a",
+			"TypeName": "FlaxEngine.MeshCollider",
+			"ParentID": "500057ee4a5750b1e608fa8b664bf3c9",
+			"Name": "MeshCollider",
+			"Tag": "land",
+			"CollisionData": "9bb62e384d4e4729f889628b93397ab5"
+		},
+		{
+			"ID": "9e403b1d4ca442d54671fe862b4809c7",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "world NA",
+			"Model": "153617a54287ed8ba71efead9636b185",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1ee9df9545bbfcc5ab7ae78b23a3ace9",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "f4969fcc452dc132fff8c8b07876d186",
+			"TypeName": "FlaxEngine.MeshCollider",
+			"ParentID": "9e403b1d4ca442d54671fe862b4809c7",
+			"Name": "MeshCollider",
+			"Tags": [
+				"land",
+				"railway"
+			],
+			"CollisionData": "61e8f13c4a4761d9b541009adf9c455a"
+		},
+		{
+			"ID": "82e95b8247ce28b2392b0da315b5af25",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "world Eurasia",
+			"Model": "93fb429a4234dcfc1d61be8e1eb9f8ac",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1ee9df9545bbfcc5ab7ae78b23a3ace9",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "4c26a7594a53c44a8304eaa5c68ea073",
+			"TypeName": "FlaxEngine.MeshCollider",
+			"ParentID": "82e95b8247ce28b2392b0da315b5af25",
+			"Name": "MeshCollider",
+			"Tags": [
+				"land",
+				"railway"
+			],
+			"CollisionData": "275fbfbf4850ffff448271ba8c52ab05"
+		},
+		{
+			"ID": "4de745bc4706c4e967b50691ac1fca0d",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "world Australia",
+			"Model": "e6e412e545038926bcea6e97c5df750a",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "1ee9df9545bbfcc5ab7ae78b23a3ace9",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "45bcadcb49bf1bbc0cbc9ab953ce85fb",
+			"TypeName": "FlaxEngine.MeshCollider",
+			"ParentID": "4de745bc4706c4e967b50691ac1fca0d",
+			"Name": "MeshCollider",
+			"Tag": "land",
+			"CollisionData": "c89ad3dc476faf4273c595ab1d855402"
+		},
+		{
+			"ID": "bfd3d5034c5c0db86dbeb580aa7ddd25",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "world Antarctida",
+			"Model": "a245c9da4f44c4a9bacc4da2766ee8cb",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "28cac01246c37a932ab9e0b92a838cc2",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "e489d8e54f86f05398366284a916ab44",
+			"TypeName": "FlaxEngine.MeshCollider",
+			"ParentID": "bfd3d5034c5c0db86dbeb580aa7ddd25",
+			"Name": "MeshCollider",
+			"Tag": "land",
+			"CollisionData": "ea997dc34abf8fa282e5428be0e64ccb"
+		},
+		{
+			"ID": "9918b68a41ac8ebdf154518e6315c389",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "world Africa",
+			"Model": "75f2f0f74658ab721fadc3b26a6160f9",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "9c45baf147715bac332a489b42711cf7",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "cdbf052942ce4950e041ceaef1a3fe77",
+			"TypeName": "FlaxEngine.MeshCollider",
+			"ParentID": "9918b68a41ac8ebdf154518e6315c389",
+			"Name": "MeshCollider",
+			"Tag": "land",
+			"CollisionData": "0e3133a94b2eb3575d732b9212a0b61f"
+		},
+		{
+			"ID": "4cd3bada4ffc49b2fa2e80b4bb6a5038",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "Tickets"
+		},
+		{
+			"ID": "a9509269460835dffad4acba80818677",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "4cd3bada4ffc49b2fa2e80b4bb6a5038",
+			"Name": "TrainTickets"
+		},
+		{
+			"ID": "50150f3a441c81d079b566a28c9def6e",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "a9509269460835dffad4acba80818677",
+			"Name": "ticket0",
+			"Transform": {
+				"Orientation": {
+					"X": 0.31199130415916443,
+					"Y": -0.05782417207956314,
+					"Z": 0.17281825840473175,
+					"W": 0.9324439167976379
+				}
+			}
+		},
+		{
+			"ID": "b557e9b64ea705ca7cf2b897a8bdf779",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "50150f3a441c81d079b566a28c9def6e",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "7b5af99a4036848c17ee999d04740601",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "b557e9b64ea705ca7cf2b897a8bdf779",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "e1756d18473c3d32a596408f5fcbb1be",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "b557e9b64ea705ca7cf2b897a8bdf779",
+			"Name": "ticketCollider",
+			"Tag": "trainTicket"
+		},
+		{
+			"ID": "92ebaee74d6cbe500b031b95d61533f7",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "a9509269460835dffad4acba80818677",
+			"Name": "ticket1",
+			"Transform": {
+				"Orientation": {
+					"X": 0.44612959027290344,
+					"Y": 0.007787220645695925,
+					"Z": -0.015618759207427502,
+					"W": 0.8947981595993042
+				}
+			}
+		},
+		{
+			"ID": "ca49f54f46e054ad4531269b175bc5d0",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "92ebaee74d6cbe500b031b95d61533f7",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "4b530b2b4f707d289bfb8ab1f963024f",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "ca49f54f46e054ad4531269b175bc5d0",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "a408ae184b077bb6c28939bd0b5f4ee1",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "ca49f54f46e054ad4531269b175bc5d0",
+			"Name": "ticketCollider",
+			"Tag": "trainTicket"
+		},
+		{
+			"ID": "117b352242457a150e9c3882f16bfde8",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "a9509269460835dffad4acba80818677",
+			"Name": "ticket2",
+			"Transform": {
+				"Orientation": {
+					"X": 0.18871274590492249,
+					"Y": 0.02820330671966076,
+					"Z": -0.14509373903274536,
+					"W": 0.9708449840545654
+				}
+			}
+		},
+		{
+			"ID": "2459989b4b71a3760e115589424902ef",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "117b352242457a150e9c3882f16bfde8",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "a8b41e9b4d35c54ca289dbb70254dd79",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "2459989b4b71a3760e115589424902ef",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "8b34dede46738a21a9dd718d8ec4c3c9",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "2459989b4b71a3760e115589424902ef",
+			"Name": "ticketCollider",
+			"Tag": "trainTicket"
+		},
+		{
+			"ID": "77488d2a49a8e0ca23619a8073daa687",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "a9509269460835dffad4acba80818677",
+			"Name": "ticket3",
+			"Transform": {
+				"Orientation": {
+					"X": -0.016451839357614517,
+					"Y": 0.005825978238135576,
+					"Z": 0.3337559700012207,
+					"W": 0.942497968673706
+				}
+			}
+		},
+		{
+			"ID": "acd0f2ed49e4d7e987f327a94e6f77f6",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "77488d2a49a8e0ca23619a8073daa687",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "86b281ca49144b425d71ffbedd52d81f",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "acd0f2ed49e4d7e987f327a94e6f77f6",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "bf706b4747a4817468daa7bb5692532e",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "acd0f2ed49e4d7e987f327a94e6f77f6",
+			"Name": "ticketCollider",
+			"Tag": "trainTicket"
+		},
+		{
+			"ID": "128b950c4f46c9892b12dcbe1a37d218",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "a9509269460835dffad4acba80818677",
+			"Name": "ticket4",
+			"Transform": {
+				"Orientation": {
+					"X": -0.4223613142967224,
+					"Y": 0.014749226160347462,
+					"Z": 0.03162965178489685,
+					"W": 0.9057555198669434
+				}
+			}
+		},
+		{
+			"ID": "98e0d6c649275220647728bc35308019",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "128b950c4f46c9892b12dcbe1a37d218",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "05f270bf467e5c3ad8777b898f401750",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "98e0d6c649275220647728bc35308019",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "88f39ded4041ee66cba9e88e3d7b6d8f",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "98e0d6c649275220647728bc35308019",
+			"Name": "ticketCollider",
+			"Tag": "trainTicket"
+		},
+		{
+			"ID": "15146b9440abd4ee9737c690bfc06a3d",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "a9509269460835dffad4acba80818677",
+			"Name": "ticket5",
+			"Transform": {
+				"Orientation": {
+					"X": -0.2511315643787384,
+					"Y": -0.06261405348777771,
+					"Z": -0.23367856442928314,
+					"W": 0.937233567237854
+				}
+			}
+		},
+		{
+			"ID": "569ddfe548a1cae10275648776c2c0e0",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "15146b9440abd4ee9737c690bfc06a3d",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "bdc3c3b2443fd9cd5a73a78b776845c7",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "569ddfe548a1cae10275648776c2c0e0",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "6d393f4e412209976350de8b0d1f6f9f",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "569ddfe548a1cae10275648776c2c0e0",
+			"Name": "ticketCollider",
+			"Tag": "trainTicket"
+		},
+		{
+			"ID": "48842c6541421ed1f1f474918b1827a4",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "4cd3bada4ffc49b2fa2e80b4bb6a5038",
+			"Name": "ShipTickets"
+		},
+		{
+			"ID": "d9f066504f801c8a7ac917ac6a19dac1",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "48842c6541421ed1f1f474918b1827a4",
+			"Name": "ticket0",
+			"Transform": {
+				"Orientation": {
+					"X": -0.5907583832740784,
+					"Y": -0.11483176797628403,
+					"Z": -0.15238675475120544,
+					"W": 0.7839620113372803
+				}
+			}
+		},
+		{
+			"ID": "615eab88455b2a0ab566eba7ca57d8af",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "d9f066504f801c8a7ac917ac6a19dac1",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "e10b108b45ea122c24dc5d9c7caeb9ac",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "615eab88455b2a0ab566eba7ca57d8af",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "5f89fa144a0e841be6d529a7ade4cb46",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "615eab88455b2a0ab566eba7ca57d8af",
+			"Name": "ticketCollider",
+			"Tag": "shipTicket"
+		},
+		{
+			"ID": "b51b55304823bf1bb7f7a998aae58e6b",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "48842c6541421ed1f1f474918b1827a4",
+			"Name": "ticket1",
+			"Transform": {
+				"Orientation": {
+					"X": -0.11685125529766083,
+					"Y": -0.03461286425590515,
+					"Z": -0.2818983197212219,
+					"W": 0.9516727924346924
+				}
+			}
+		},
+		{
+			"ID": "9c35e1274266ce8a6e0eccaceb885e2d",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "b51b55304823bf1bb7f7a998aae58e6b",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "69055f1b4ca09215d91bcb9b726c7bbd",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "9c35e1274266ce8a6e0eccaceb885e2d",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "c152daf9406f1557d7c9ef859aa259e9",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "9c35e1274266ce8a6e0eccaceb885e2d",
+			"Name": "ticketCollider",
+			"Tag": "shipTicket"
+		},
+		{
+			"ID": "08d4837b4437eb59dc3a2b9b378dd4af",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "48842c6541421ed1f1f474918b1827a4",
+			"Name": "ticket2",
+			"Transform": {
+				"Orientation": {
+					"X": -0.6147601008415222,
+					"Y": 0.2801622748374939,
+					"Z": 0.3057442009449005,
+					"W": 0.6708947420120239
+				}
+			}
+		},
+		{
+			"ID": "429caf6c42923ed8d63c208128d948f0",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "08d4837b4437eb59dc3a2b9b378dd4af",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "bcbaa1104f7d469350649ea5a56b7fac",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "429caf6c42923ed8d63c208128d948f0",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "ffd61f6d4b5f96c0cc52bfb6107e5473",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "429caf6c42923ed8d63c208128d948f0",
+			"Name": "ticketCollider",
+			"Tag": "shipTicket"
+		},
+		{
+			"ID": "1b23483d420d0f4d9818bc8837289650",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "48842c6541421ed1f1f474918b1827a4",
+			"Name": "ticket3",
+			"Transform": {
+				"Orientation": {
+					"X": 0.8520735502243042,
+					"Y": -0.4341534674167633,
+					"Z": -0.1327349841594696,
+					"W": -0.26050513982772827
+				}
+			}
+		},
+		{
+			"ID": "a66a3839420b90b95b4a29a787b447d3",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "1b23483d420d0f4d9818bc8837289650",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "7f8c3e8e4574c836dd5a4cbc51f0bd88",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "a66a3839420b90b95b4a29a787b447d3",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "f30fe52c441ac0ee98e5d7832ea3063a",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "a66a3839420b90b95b4a29a787b447d3",
+			"Name": "ticketCollider",
+			"Tag": "shipTicket"
+		},
+		{
+			"ID": "20ffe76c4b1fcad99adf9091d27842c4",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "48842c6541421ed1f1f474918b1827a4",
+			"Name": "ticket4",
+			"Transform": {
+				"Orientation": {
+					"X": 0.684440016746521,
+					"Y": -0.3562960922718048,
+					"Z": 0.2937072813510895,
+					"W": 0.5642082691192627
+				}
+			}
+		},
+		{
+			"ID": "c66ec41d4fda9629a13e3693c2c8d735",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "20ffe76c4b1fcad99adf9091d27842c4",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "3d339ce9412d6e384e2fe483506e5312",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "c66ec41d4fda9629a13e3693c2c8d735",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "596d0f104eba865444b340b1d4bbc162",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "c66ec41d4fda9629a13e3693c2c8d735",
+			"Name": "ticketCollider",
+			"Tag": "shipTicket"
+		},
+		{
+			"ID": "dbbfdb9c475bb0ef6ecf1db2affb6ce1",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "48842c6541421ed1f1f474918b1827a4",
+			"Name": "ticket5",
+			"Transform": {
+				"Orientation": {
+					"X": -0.8858118653297424,
+					"Y": -0.3851621747016907,
+					"Z": -0.10320327430963516,
+					"W": 0.23735345900058746
+				}
+			}
+		},
+		{
+			"ID": "1d1e580747231dd3f2738eb53af85809",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "dbbfdb9c475bb0ef6ecf1db2affb6ce1",
+			"Name": "model",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 5130.0,
+					"Z": 0.0
+				}
+			}
+		},
+		{
+			"ID": "f74e74314087eba22d77b28cb2684f31",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "1d1e580747231dd3f2738eb53af85809",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "b98d5d7f419879abbe002a902c2f8461",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "1d1e580747231dd3f2738eb53af85809",
+			"Name": "ticketCollider",
+			"Tag": "shipTicket"
 		}
 	]
 }

@@ -51,6 +51,14 @@
 			"MouseButton": 0,
 			"GamepadButton": 13,
 			"Gamepad": -1
+		},
+		{
+			"Name": "UseTicket",
+			"Mode": 1,
+			"Key": 84,
+			"MouseButton": 0,
+			"GamepadButton": 15,
+			"Gamepad": -1
 		}
 	],
 	"AxisMappings": [
