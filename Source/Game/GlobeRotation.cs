@@ -19,6 +19,7 @@ public class GlobeRotation : Script
     [Serialize, ShowInEditor] UIControl startButton, shipTicketIcon, trainTicketIcon;
     [Serialize, ShowInEditor] Collider playerTrigger;
     private bool hasTrainTicket, hasShipTicket, landHasRailroads, inTheSea;
+    public int health, sanity, lore, strength, influence, observation;
     public override void OnStart()
     {
         Screen.CursorLock = CursorLockMode.Locked;
@@ -78,7 +79,7 @@ public class GlobeRotation : Script
         startButton.IsActive = false;
     }
     private void OnTriggerEnter(PhysicsColliderActor collider)
-    {        
+    {
          if (collider.HasTag("railway"))
          {
             runSpeed = landSpeed;
@@ -100,23 +101,11 @@ public class GlobeRotation : Script
             landHasRailroads = false;
             inTheSea = true;
         }
-        else if (collider.HasTag("trainTicket"))
+        else if (collider.Parent.TryGetScript<Iticket>(out Iticket ticket))
         {
-            if (!hasTrainTicket)
-            {
-                hasTrainTicket = true;
-                collider.Parent.IsActive = false;
-                trainTicketIcon.IsActive = true;
-            }
-        }
-        else if (collider.HasTag("shipTicket"))
-        {
-            if (!hasShipTicket)
-            {
-                hasShipTicket = true;
-                collider.Parent.IsActive = false;
-                shipTicketIcon.IsActive = true;
-            }
+            ticket.BuyTicket(hasShipTicket, hasTrainTicket);
+            hasTrainTicket = trainTicketIcon.IsActive;
+            hasShipTicket = shipTicketIcon.IsActive;
         }        
     }
 }
