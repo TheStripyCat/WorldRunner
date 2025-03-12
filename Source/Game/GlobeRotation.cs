@@ -19,7 +19,7 @@ public class GlobeRotation : Script
     [Serialize, ShowInEditor] UIControl startButton, shipTicketIcon, trainTicketIcon;
     [Serialize, ShowInEditor] Collider playerTrigger;
     private bool hasTrainTicket, hasShipTicket, landHasRailroads, inTheSea;
-    public int health, sanity, lore, strength, influence, observation;
+    public int health, sanity, lore, strength, influence, observation, maxHealth, maxSanity, will;
     public override void OnStart()
     {
         Screen.CursorLock = CursorLockMode.Locked;
@@ -106,6 +106,29 @@ public class GlobeRotation : Script
             ticket.BuyTicket(hasShipTicket, hasTrainTicket);
             hasTrainTicket = trainTicketIcon.IsActive;
             hasShipTicket = shipTicketIcon.IsActive;
-        }        
+        }
+        else if (collider.HasTag("skill"))
+        {
+            health += collider.Parent.GetScript<SkillScript>().health;
+            sanity += collider.Parent.GetScript<SkillScript>().sanity;
+            will += collider.Parent.GetScript<SkillScript>().will;
+            strength += collider.Parent.GetScript<SkillScript>().strength;
+            influence += collider.Parent.GetScript<SkillScript>().influence;
+            observation += collider.Parent.GetScript<SkillScript>().observation;
+            lore += collider.Parent.GetScript<SkillScript>().lore;
+            if (health > maxHealth)
+            {
+                health = maxHealth;
+            }
+            else if (sanity > maxSanity)
+            {
+                sanity = maxSanity;
+            }
+            else
+            {
+                collider.Parent.IsActive = false;
+                collider.Parent.Parent.Parent.GetScript<POIScript>().hasItem = false;
+            }
+        }
     }
 }

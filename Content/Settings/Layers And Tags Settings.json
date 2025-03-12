@@ -5,11 +5,14 @@
 	"Data": {
 	"Tags": [
 		"Bullet",
+		"danger",
+		"enemy",
 		"eye",
 		"land",
 		"Player",
 		"railway",
 		"shipTicket",
+		"skill",
 		"trainTicket",
 		"water"
 	],

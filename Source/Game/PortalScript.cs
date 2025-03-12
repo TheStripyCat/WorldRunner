@@ -19,7 +19,7 @@ public class PortalScript : Script
 
     public override void OnEnable()
     {
-        portalCollider.TriggerEnter += EnterThePortal;        
+         portalCollider.TriggerEnter += EnterThePortal;        
     }
 
 

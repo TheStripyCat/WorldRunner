@@ -1,7 +1,7 @@
 {
 	"ID": "013787484b36af0622bb0e8449f8ecb1",
 	"TypeName": "FlaxEngine.Prefab",
-	"EngineBuild": 6408,
+	"EngineBuild": 6606,
 	"Data": [
 	{
 		"ID": "fccd97b841c8e5697ca463b18c6b3355",
@@ -65,9 +65,24 @@
 		}
 	},
 	{
+		"ID": "08d854494a93ed189de123a882233ef8",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"Name": "AudioSource",
+		"PlayOnStart": true,
+		"AllowSpatialization": false
+	},
+	{
+		"ID": "02172f774aef0b80d7bf2fa589034ae8",
+		"TypeName": "FlaxEngine.RigidBody",
+		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"Name": "RigidBody",
+		"EnableGravity": false
+	},
+	{
 		"ID": "48a7b6704d497ceb054d0c9610207dcc",
 		"TypeName": "FlaxEngine.CapsuleCollider",
-		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"ParentID": "02172f774aef0b80d7bf2fa589034ae8",
 		"Name": "CapsuleCollider",
 		"Transform": {
 			"Orientation": {
@@ -79,15 +94,6 @@
 		},
 		"IsTrigger": true,
 		"Radius": 50.0
-	},
-	{
-		"ID": "08d854494a93ed189de123a882233ef8",
-		"TypeName": "FlaxEngine.AudioSource",
-		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
-		"Name": "AudioSource",
-		"Clip": "84f6242641cf0715772b1089c0c41ab3",
-		"PlayOnStart": true,
-		"AllowSpatialization": false
 	}
 ]
 }
