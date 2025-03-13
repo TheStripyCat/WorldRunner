@@ -12,7 +12,7 @@ public class PortalScript : Script
     [Serialize, ShowInEditor] Collider portalCollider;
     [Serialize, ShowInEditor] Actor player;
     [Serialize, ShowInEditor] List<Actor> eyes; 
-    private float timer = 0f;
+    
     private Quaternion playerOrientation;
     private int eyesToActivate = 0;
 
@@ -40,9 +40,10 @@ public class PortalScript : Script
     public void EnterThePortal(PhysicsColliderActor collider)
     {
         if (collider.HasTag("Player"))
-        {
-            playerOrientation = player.Orientation;
+        {            
+            player.GetScript<GlobeRotation>().returnOrientation = player.Orientation;
             player.Position = new Vector3(0, 0, 28000);
+            player.GetScript<GlobeRotation>().portalToClose = portalCollider.Parent.Parent.Parent;
             foreach (Actor eye in eyes)
             {
                 eye.IsActive = false;

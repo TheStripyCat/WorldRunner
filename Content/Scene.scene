@@ -770,7 +770,9 @@
 			"ID": "2642b5f741d4af8a92ab339a6eca7cbb",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
-			"V": {}
+			"V": {
+	"portalRB": "37cf56c944e23d78a6b60994461f5102"
+}
 		},
 		{
 			"ID": "9ad741e54c0a632c9d7d699d61a7f2d6",
@@ -1159,7 +1161,9 @@
 			"ID": "5abfd66343c9284825692584006030d9",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
-			"V": {}
+			"V": {
+	"portalRB": "37cf56c944e23d78a6b60994461f5102"
+}
 		},
 		{
 			"ID": "703caada4e985863a599ea822986f18d",
@@ -1998,7 +2002,9 @@
 			"ID": "2cfc2ad24decf4b58d45369f09a0c27c",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
-			"V": {}
+			"V": {
+	"portalRB": "65a396bf4a58cc7dd3c5a4a79ebe5b30"
+}
 		},
 		{
 			"ID": "1f879a49412ae4488c78f3add03f2738",
@@ -2387,7 +2393,9 @@
 			"ID": "3e98fdc5416842d712d5a88b8ba7e274",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
-			"V": {}
+			"V": {
+	"portalRB": "65a396bf4a58cc7dd3c5a4a79ebe5b30"
+}
 		},
 		{
 			"ID": "9b2b55bd407890d481a4debb90c7d1c1",
@@ -3226,7 +3234,9 @@
 			"ID": "81c4adcf44a709f6e649d89997bf9775",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
-			"V": {}
+			"V": {
+	"portalRB": "51d52c30420d713ea6aa3ca00c689161"
+}
 		},
 		{
 			"ID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
@@ -3615,7 +3625,9 @@
 			"ID": "83d90a134b42c4fbb3aaedb4085504df",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
-			"V": {}
+			"V": {
+	"portalRB": "51d52c30420d713ea6aa3ca00c689161"
+}
 		},
 		{
 			"ID": "0a29307e490bf2671066d281e889f82b",
@@ -4454,7 +4466,9 @@
 			"ID": "9297236d4035832cd1c198a187595fa8",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "c380ab694581ed819029cd941da6e7af",
-			"V": {}
+			"V": {
+	"portalRB": "5b02c7194c525e93e725bfb9525a03b9"
+}
 		},
 		{
 			"ID": "f20593b142017086841f7b94fa84bd55",
@@ -4843,7 +4857,9 @@
 			"ID": "deb0e3154e28e281e753f1abbb7d808b",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "26f1c35c4afb7f94bca8fba0b3beaa71",
-			"V": {}
+			"V": {
+	"portalRB": "5b02c7194c525e93e725bfb9525a03b9"
+}
 		},
 		{
 			"ID": "12835425410deeecd04f84a8efc69633",
@@ -5682,7 +5698,9 @@
 			"ID": "0a8f229146f4ae4906cc06ae8e33a945",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "486f902547eebb0e0cafdeb954f9aedd",
-			"V": {}
+			"V": {
+	"portalRB": "ba5bdab0451492513d08b394b8488daf"
+}
 		},
 		{
 			"ID": "70f0ef3b4ffe9427f80ff8b90b1f5da3",
@@ -6071,7 +6089,9 @@
 			"ID": "12194f3b4c0c12457f0bab939a443292",
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "1eaff2db4992955db63dfbbd4c1e876a",
-			"V": {}
+			"V": {
+	"portalRB": "ba5bdab0451492513d08b394b8488daf"
+}
 		},
 		{
 			"ID": "1f00568747c3411b556bbfbed25ab784",
@@ -6685,7 +6705,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "387d1f4f4cacc26c1279b19d77f8e905",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -6752,7 +6772,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "387d1f4f4cacc26c1279b19d77f8e905",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -6819,7 +6839,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "387d1f4f4cacc26c1279b19d77f8e905",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -6886,7 +6906,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "387d1f4f4cacc26c1279b19d77f8e905",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -6953,7 +6973,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "387d1f4f4cacc26c1279b19d77f8e905",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -7020,7 +7040,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "387d1f4f4cacc26c1279b19d77f8e905",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -7092,7 +7112,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"Material": "bc9ddcb1474a388c116e778656f3aa2b",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -7158,7 +7178,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"Material": "bc9ddcb1474a388c116e778656f3aa2b",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -7224,7 +7244,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"Material": "bc9ddcb1474a388c116e778656f3aa2b",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -7290,7 +7310,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"Material": "bc9ddcb1474a388c116e778656f3aa2b",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -7356,7 +7376,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"Material": "bc9ddcb1474a388c116e778656f3aa2b",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -7422,7 +7442,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "8391b6da40053a988a0959ab9f26f700",
+						"Material": "bc9ddcb1474a388c116e778656f3aa2b",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true

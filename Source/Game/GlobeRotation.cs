@@ -13,24 +13,30 @@ public class GlobeRotation : Script
     private float runSpeed, turnSpeed, mouseInput, hInput, frwRotation, landSpeed = 8f, waterSpeed = 6f, railroadSpeed = 12f, shipSpeed = 10f,
         landTurnSpeed = 4f, waterTurnSpeed = 3f, railroadTurnSpeed = 6f, shipTurnSpeed = 5f;
     
-    private bool weAreRunning = true;
-    private AnimGraphParameter isRunning;
+    private bool weAreRunning = false;
+    private AnimGraphParameter isRunning, isDead;
     [Serialize, ShowInEditor] Actor player;
     [Serialize, ShowInEditor] UIControl startButton, shipTicketIcon, trainTicketIcon;
     [Serialize, ShowInEditor] Collider playerTrigger;
+    public Actor portalToClose;
+    public Quaternion returnOrientation;
+    private int eyesCollected = 0;
     private bool hasTrainTicket, hasShipTicket, landHasRailroads, inTheSea;
-    public int health, sanity, lore, strength, influence, observation, maxHealth, maxSanity, will;
+    public int health = 7, sanity = 7, lore = 1, strength = 1, influence = 1, observation = 2, maxHealth, maxSanity, will = 1;
     public override void OnStart()
     {
-        Screen.CursorLock = CursorLockMode.Locked;
-        Screen.CursorVisible = false;
+        //Screen.CursorLock = CursorLockMode.Locked;
+        //Screen.CursorVisible = false;
         startButton.Get<Button>().Clicked += StartRunning;
+        maxHealth = health;
+        maxSanity = sanity;
     }
     
     /// <inheritdoc/>
     public override void OnEnable()
     {        
         isRunning = player.As<AnimatedModel>().GetParameter("isRunning");
+        isDead = player.As<AnimatedModel>().GetParameter("isDead");
         playerTrigger.TriggerEnter += OnTriggerEnter;
     }
 
@@ -128,6 +134,41 @@ public class GlobeRotation : Script
             {
                 collider.Parent.IsActive = false;
                 collider.Parent.Parent.Parent.GetScript<POIScript>().hasItem = false;
+            }
+        }
+        else if (collider.HasTag("danger"))
+        {
+            health--;
+            if (health == 0)
+            {
+                weAreRunning = false;
+                isDead.Value = true;
+            }
+        }
+        else if (collider.HasTag("enemy"))
+        {
+            health -= collider.Parent.GetScript<EnemyScript>().healthDamage;
+            if ((collider.Parent.GetScript<EnemyScript>().sanityDamage - will)>0)
+            {
+                sanity -= (collider.Parent.GetScript<EnemyScript>().sanityDamage - will);
+            }
+            
+            if ((health <= 0) || (sanity <= 0))
+            {
+                weAreRunning = false;
+                isDead.Value = true;
+            }
+        }
+        else if (collider.HasTag("eye"))
+        {
+            eyesCollected++;
+            collider.Parent.Parent.IsActive = false;
+            if (eyesCollected == 3)
+            {
+                portalToClose.IsActive = false;
+                portalToClose.Parent.GetScript<POIScript>().hasPortal = false;
+                Actor.Position = new Vector3(0, 0, 0);
+                Actor.Orientation = returnOrientation;
             }
         }
     }

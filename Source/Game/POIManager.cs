@@ -43,11 +43,11 @@ public class POIManager : Script
     public override void OnUpdate()
     {
         timer += Time.DeltaTime;
-        if ((timer >= 30f) && (portalsOpened < maxPortals))
+        if ((timer >= 60f) && (portalsOpened < maxPortals))
         {
             OpenPortal();
         }
-        else if ((timer >= 10f) && (portalsOpened == maxPortals)) Debug.Log("gameover");
+        else if ((timer >= 60f) && (portalsOpened == maxPortals)) Debug.Log("gameover");
     }
     private void OpenPortal()
     {
