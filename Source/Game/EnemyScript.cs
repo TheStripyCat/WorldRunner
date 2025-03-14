@@ -38,7 +38,7 @@ public class EnemyScript : Script
     /// <inheritdoc/>
     public override void OnUpdate()
     {
-        if (hpActive <= enemyHealth)
+        if (hpActive <= enemyHealth-1)
         {
             hitPoints[hpActive].IsActive = true;
             hpActive++;
@@ -56,10 +56,17 @@ public class EnemyScript : Script
             if (healthDamage > 0)
             {
                 enemyHealth -= collider.Parent.Parent.Parent.GetScript<GlobeRotation>().strength;
+                collider.Parent.Parent.Parent.GetScript<GlobeRotation>().health -= healthDamage;
             }
             else
             {
                 enemyHealth -= collider.Parent.Parent.Parent.GetScript<GlobeRotation>().lore;
+                if ((sanityDamage - collider.Parent.Parent.Parent.GetScript<GlobeRotation>().will) > 0)
+                {
+                    collider.Parent.Parent.Parent.GetScript<GlobeRotation>().sanity -=
+                        sanityDamage - collider.Parent.Parent.Parent.GetScript<GlobeRotation>().will;                    
+                }
+                
             }
             if (enemyHealth > 0)
             {

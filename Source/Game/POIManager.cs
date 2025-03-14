@@ -29,8 +29,7 @@ public class POIManager : Script
         poiScript.hasPortal = true;
         randomEnemy = RandomUtil.Random.Next(0, poiScript.enemies.Count);
         poiScript.enemies[randomEnemy].IsActive = true;
-        portalsOpened++;
-        Debug.Log("first portal opened");
+        portalsOpened++;        
     }
 
     /// <inheritdoc/>

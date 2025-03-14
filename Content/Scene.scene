@@ -77,11 +77,12 @@
 				}
 			},
 			"Color": {
-				"R": 1.0,
-				"G": 0.9770245552062988,
-				"B": 0.8860000371932983,
+				"R": 0.5580850839614868,
+				"G": 0.7388888597488403,
+				"B": 0.586629331111908,
 				"A": 1.0
-			}
+			},
+			"Brightness": 3.5
 		},
 		{
 			"ID": "eb18e84d41670d6314174b89a1d5ffea",
@@ -94,6 +95,12 @@
 					"Y": 150.0,
 					"Z": 0.0
 				}
+			},
+			"Color": {
+				"R": 1.0,
+				"G": 0.9104193449020386,
+				"B": 0.9548287391662598,
+				"A": 1.0
 			},
 			"BakedProbe": "1c0e10484ff57d402275289550564b9f",
 			"Mode": 0
@@ -121,6 +128,14 @@
 	"startButton": "8e8397ee4bfdd37f5e90f48f9e6f0dcd",
 	"shipTicketIcon": "b681e7a344f3b6ed470ced825483fe89",
 	"trainTicketIcon": "9b1f92c441cc62bf22b4fc82499e2c88",
+	"healthUI": "86bbb20f44451e4e1f637c965dfb74ae",
+	"sanityUI": "c088b056400146ea4e2f718abeb93eb4",
+	"strengthUI": "155e8b6449080896877085bae108c5a7",
+	"loreUI": "69fbf2774cc916e2fb8d088b47be478d",
+	"influenceUI": "90fce6ef40c50bf0ba928d92ce003b0d",
+	"observationUI": "cb6e86c746299679b006adbe55685821",
+	"willUI": "be97c58242eb46a2a802b58fccfc979d",
+	"portalsClosedUI": "a313071043ce92375fdd9cba99e042b9",
 	"playerTrigger": "dbd0f3b34d0d7696dcfd47bb6b7e631c"
 }
 		},
@@ -196,6 +211,7 @@
 			"ParentID": "d2c29dec433bb80361f6b3896a9ab486",
 			"Name": "RigidBody",
 			"Mass": 51.31268310546875,
+			"IsKinematic": true,
 			"EnableGravity": false
 		},
 		{
@@ -771,7 +787,17 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"V": {
-	"portalRB": "37cf56c944e23d78a6b60994461f5102"
+	"portalRB": "37cf56c944e23d78a6b60994461f5102",
+	"sanityDamage": 2,
+	"hitPoints": [
+		"d2fad4e84e8ae9428183ccb0c692c32c",
+		"15bce3344a7858792f43ddbadc11b275",
+		"65625fbd4a46e10674a577a72b6d1998",
+		"ddfa96644c1877f7153eebbca45de8bc",
+		"9a880e5d4e1f73321d8acfb6284d5a8b",
+		"08fc6aa14bb16f055f47f2a5a02e6968",
+		"674177804539f87c513dd9b751b4a126"
+	]
 }
 		},
 		{
@@ -799,20 +825,14 @@
 		{
 			"ID": "d2fad4e84e8ae9428183ccb0c692c32c",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9ad741e54c0a632c9d7d699d61a7f2d6",
+			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"IsActive": false,
 			"Name": "hit point0",
 			"Transform": {
 				"Translation": {
-					"X": 184.9999542236328,
-					"Y": -0.0000457763671875,
-					"Z": -0.00012969970703125
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 0.000019073486328125,
+					"Y": 184.99996948242188,
+					"Z": -0.000118255615234375
 				}
 			}
 		},
@@ -848,20 +868,14 @@
 		{
 			"ID": "15bce3344a7858792f43ddbadc11b275",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9ad741e54c0a632c9d7d699d61a7f2d6",
+			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"IsActive": false,
 			"Name": "hit point1",
 			"Transform": {
 				"Translation": {
-					"X": 184.99986267089844,
-					"Y": 14.999919891357422,
-					"Z": -0.00020599365234375
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -15.000064849853516,
+					"Y": 184.99978637695313,
+					"Z": -0.00037384033203125
 				}
 			}
 		},
@@ -897,20 +911,14 @@
 		{
 			"ID": "65625fbd4a46e10674a577a72b6d1998",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9ad741e54c0a632c9d7d699d61a7f2d6",
+			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"IsActive": false,
 			"Name": "hit point2",
 			"Transform": {
 				"Translation": {
-					"X": 185.00006103515625,
-					"Y": -14.999996185302734,
-					"Z": -0.00005340576171875
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 14.999977111816406,
+					"Y": 185.0000762939453,
+					"Z": -0.000030517578125
 				}
 			}
 		},
@@ -946,20 +954,14 @@
 		{
 			"ID": "ddfa96644c1877f7153eebbca45de8bc",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9ad741e54c0a632c9d7d699d61a7f2d6",
+			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"IsActive": false,
 			"Name": "hit point3",
 			"Transform": {
 				"Translation": {
-					"X": 184.99986267089844,
-					"Y": -29.999996185302734,
-					"Z": -0.00016021728515625
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 29.999980926513672,
+					"Y": 184.9998779296875,
+					"Z": -0.0001373291015625
 				}
 			}
 		},
@@ -995,20 +997,14 @@
 		{
 			"ID": "9a880e5d4e1f73321d8acfb6284d5a8b",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9ad741e54c0a632c9d7d699d61a7f2d6",
+			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"IsActive": false,
 			"Name": "hit point4",
 			"Transform": {
 				"Translation": {
-					"X": 185.0000762939453,
-					"Y": 29.999916076660156,
-					"Z": -0.000102996826171875
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -29.999950408935547,
+					"Y": 185.0000762939453,
+					"Z": -0.000091552734375
 				}
 			}
 		},
@@ -1044,20 +1040,14 @@
 		{
 			"ID": "08fc6aa14bb16f055f47f2a5a02e6968",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9ad741e54c0a632c9d7d699d61a7f2d6",
+			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"IsActive": false,
 			"Name": "hit point5",
 			"Transform": {
 				"Translation": {
-					"X": 184.99996948242188,
-					"Y": 44.99987030029297,
-					"Z": -0.00018310546875
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -44.999900817871094,
+					"Y": 184.99998474121094,
+					"Z": -0.000171661376953125
 				}
 			}
 		},
@@ -1093,20 +1083,14 @@
 		{
 			"ID": "674177804539f87c513dd9b751b4a126",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9ad741e54c0a632c9d7d699d61a7f2d6",
+			"ParentID": "a3ec4bdf43d029354d4a2c89efa45620",
 			"IsActive": false,
 			"Name": "hit point6",
 			"Transform": {
 				"Translation": {
-					"X": 184.99993896484375,
-					"Y": -44.99995422363281,
-					"Z": -0.00008392333984375
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 44.999935150146484,
+					"Y": 184.9999542236328,
+					"Z": -0.00006103515625
 				}
 			}
 		},
@@ -1162,7 +1146,17 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"V": {
-	"portalRB": "37cf56c944e23d78a6b60994461f5102"
+	"portalRB": "37cf56c944e23d78a6b60994461f5102",
+	"healthDamage": 1,
+	"hitPoints": [
+		"f197010f4af45848aace8987658ba2cb",
+		"1072976842f6d4fbd10493b8a416ecf1",
+		"08eac6e447ec312acee9caaa4dece38c",
+		"7973768f4e2293bca613f7b3af70c714",
+		"aaaa2ebf44b2253f9f9302b45f530dd8",
+		"c1fd27b34b1167044fc39087fa790548",
+		"6627efff46692c4f725debb34e1bfcdb"
+	]
 }
 		},
 		{
@@ -1190,20 +1184,14 @@
 		{
 			"ID": "f197010f4af45848aace8987658ba2cb",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "703caada4e985863a599ea822986f18d",
+			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"IsActive": false,
 			"Name": "hit point0",
 			"Transform": {
 				"Translation": {
-					"X": 184.99984741210938,
-					"Y": 0.00008392333984375,
-					"Z": 0.00003814697265625
-				},
-				"Orientation": {
-					"X": 2.9802322387695313e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -0.00011444091796875,
+					"Y": 184.99984741210938,
+					"Z": 0.0000457763671875
 				}
 			}
 		},
@@ -1239,20 +1227,14 @@
 		{
 			"ID": "1072976842f6d4fbd10493b8a416ecf1",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "703caada4e985863a599ea822986f18d",
+			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"IsActive": false,
 			"Name": "hit point1",
 			"Transform": {
 				"Translation": {
-					"X": 184.99986267089844,
-					"Y": 14.99991226196289,
-					"Z": -0.000202178955078125
-				},
-				"Orientation": {
-					"X": 2.9802322387695313e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -15.000064849853516,
+					"Y": 184.99978637695313,
+					"Z": -0.00037384033203125
 				}
 			}
 		},
@@ -1288,20 +1270,14 @@
 		{
 			"ID": "08eac6e447ec312acee9caaa4dece38c",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "703caada4e985863a599ea822986f18d",
+			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"IsActive": false,
 			"Name": "hit point2",
 			"Transform": {
 				"Translation": {
-					"X": 185.00033569335938,
-					"Y": -14.99996566772461,
-					"Z": 0.00012969970703125
-				},
-				"Orientation": {
-					"X": 2.9802322387695313e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 14.99993896484375,
+					"Y": 185.0003662109375,
+					"Z": 0.00014495849609375
 				}
 			}
 		},
@@ -1337,20 +1313,14 @@
 		{
 			"ID": "7973768f4e2293bca613f7b3af70c714",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "703caada4e985863a599ea822986f18d",
+			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"IsActive": false,
 			"Name": "hit point3",
 			"Transform": {
 				"Translation": {
-					"X": 184.99986267089844,
-					"Y": -30.000003814697266,
-					"Z": -0.000152587890625
-				},
-				"Orientation": {
-					"X": 2.9802322387695313e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 29.999980926513672,
+					"Y": 184.9998779296875,
+					"Z": -0.0001373291015625
 				}
 			}
 		},
@@ -1386,20 +1356,14 @@
 		{
 			"ID": "aaaa2ebf44b2253f9f9302b45f530dd8",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "703caada4e985863a599ea822986f18d",
+			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"IsActive": false,
 			"Name": "hit point4",
 			"Transform": {
 				"Translation": {
-					"X": 185.000244140625,
-					"Y": 30.00006866455078,
-					"Z": -0.00009918212890625
-				},
-				"Orientation": {
-					"X": 2.9802322387695313e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -30.000110626220703,
+					"Y": 185.00025939941406,
+					"Z": -0.000091552734375
 				}
 			}
 		},
@@ -1435,20 +1399,14 @@
 		{
 			"ID": "c1fd27b34b1167044fc39087fa790548",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "703caada4e985863a599ea822986f18d",
+			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"IsActive": false,
 			"Name": "hit point5",
 			"Transform": {
 				"Translation": {
-					"X": 184.99996948242188,
-					"Y": 44.99986267089844,
-					"Z": -0.000179290771484375
-				},
-				"Orientation": {
-					"X": 2.9802322387695313e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -44.999900817871094,
+					"Y": 184.99998474121094,
+					"Z": -0.000171661376953125
 				}
 			}
 		},
@@ -1484,20 +1442,14 @@
 		{
 			"ID": "6627efff46692c4f725debb34e1bfcdb",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "703caada4e985863a599ea822986f18d",
+			"ParentID": "9a5e7b4a4e2b8b0fbb20269b84a2edfc",
 			"IsActive": false,
 			"Name": "hit point6",
 			"Transform": {
 				"Translation": {
-					"X": 184.99981689453125,
-					"Y": -44.99983215332031,
-					"Z": 0.000091552734375
-				},
-				"Orientation": {
-					"X": 2.9802322387695313e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 44.99980545043945,
+					"Y": 184.9998321533203,
+					"Z": 0.0001068115234375
 				}
 			}
 		},
@@ -2003,7 +1955,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"V": {
-	"portalRB": "65a396bf4a58cc7dd3c5a4a79ebe5b30"
+	"portalRB": "65a396bf4a58cc7dd3c5a4a79ebe5b30",
+	"sanityDamage": 2
 }
 		},
 		{
@@ -2031,20 +1984,14 @@
 		{
 			"ID": "9169cb3d4286a0b3dce45f9d3f7126e6",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "1f879a49412ae4488c78f3add03f2738",
+			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"IsActive": false,
 			"Name": "hit point0",
 			"Transform": {
 				"Translation": {
-					"X": 185.00006103515625,
-					"Y": -0.00008392333984375,
-					"Z": -0.000034332275390625
-				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 0.0001068115234375,
+					"Y": 185.0000457763672,
+					"Z": -0.0000324249267578125
 				}
 			}
 		},
@@ -2080,20 +2027,14 @@
 		{
 			"ID": "5a3786604fb37b68c676f5941b168578",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "1f879a49412ae4488c78f3add03f2738",
+			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"IsActive": false,
 			"Name": "hit point1",
 			"Transform": {
 				"Translation": {
-					"X": 184.99990844726563,
-					"Y": 14.99993896484375,
-					"Z": -0.0000400543212890625
-				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -14.999916076660156,
+					"Y": 184.9998779296875,
+					"Z": -0.0000362396240234375
 				}
 			}
 		},
@@ -2129,20 +2070,14 @@
 		{
 			"ID": "f652fca945eb63cda4ca1092c99c0add",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "1f879a49412ae4488c78f3add03f2738",
+			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"IsActive": false,
 			"Name": "hit point2",
 			"Transform": {
 				"Translation": {
-					"X": 185.00021362304688,
-					"Y": -15.000091552734375,
-					"Z": -0.0000286102294921875
-				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 15.000114440917969,
+					"Y": 185.0001983642578,
+					"Z": -0.0000247955322265625
 				}
 			}
 		},
@@ -2178,20 +2113,14 @@
 		{
 			"ID": "027248c24af649267c36d7aba567f03d",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "1f879a49412ae4488c78f3add03f2738",
+			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"IsActive": false,
 			"Name": "hit point3",
 			"Transform": {
 				"Translation": {
-					"X": 185.0,
-					"Y": -30.000091552734375,
-					"Z": -0.00008392333984375
-				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 30.000099182128906,
+					"Y": 185.0,
+					"Z": -0.000072479248046875
 				}
 			}
 		},
@@ -2227,20 +2156,14 @@
 		{
 			"ID": "f2449c324540c41cdfddee9baca4b6c6",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "1f879a49412ae4488c78f3add03f2738",
+			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"IsActive": false,
 			"Name": "hit point4",
 			"Transform": {
 				"Translation": {
-					"X": 185.00010681152344,
-					"Y": 29.999923706054688,
-					"Z": 0.0000133514404296875
-				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -29.999908447265625,
+					"Y": 185.00009155273438,
+					"Z": 0.0000152587890625
 				}
 			}
 		},
@@ -2276,20 +2199,14 @@
 		{
 			"ID": "17807bac4e478d46658406946904be4b",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "1f879a49412ae4488c78f3add03f2738",
+			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"IsActive": false,
 			"Name": "hit point5",
 			"Transform": {
 				"Translation": {
-					"X": 184.99993896484375,
-					"Y": 44.999942779541016,
-					"Z": 0.00000762939453125
-				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -44.99991989135742,
+					"Y": 184.99993896484375,
+					"Z": 0.0000095367431640625
 				}
 			}
 		},
@@ -2325,20 +2242,14 @@
 		{
 			"ID": "055b27c6489b2909bde0e49b95d92257",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "1f879a49412ae4488c78f3add03f2738",
+			"ParentID": "64e7f5bf4cfc004d793edbb8ee45ea06",
 			"IsActive": false,
 			"Name": "hit point6",
 			"Transform": {
 				"Translation": {
-					"X": 185.00015258789063,
-					"Y": -45.00010681152344,
-					"Z": -0.0000762939453125
-				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 45.0001220703125,
+					"Y": 185.00015258789063,
+					"Z": -0.000072479248046875
 				}
 			}
 		},
@@ -2394,7 +2305,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"V": {
-	"portalRB": "65a396bf4a58cc7dd3c5a4a79ebe5b30"
+	"portalRB": "65a396bf4a58cc7dd3c5a4a79ebe5b30",
+	"healthDamage": 1
 }
 		},
 		{
@@ -2422,20 +2334,14 @@
 		{
 			"ID": "534bb82e48766803e059b6a95b230f80",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9b2b55bd407890d481a4debb90c7d1c1",
+			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"IsActive": false,
 			"Name": "hit point0",
 			"Transform": {
 				"Translation": {
-					"X": 185.00003051757813,
-					"Y": -0.00006103515625,
-					"Z": -0.0001468658447265625
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 0.00008392333984375,
+					"Y": 185.00003051757813,
+					"Z": -0.0001506805419921875
 				}
 			}
 		},
@@ -2471,20 +2377,14 @@
 		{
 			"ID": "f569b47a4460db3bcbf161a451ee4ed0",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9b2b55bd407890d481a4debb90c7d1c1",
+			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"IsActive": false,
 			"Name": "hit point1",
 			"Transform": {
 				"Translation": {
-					"X": 184.9998779296875,
-					"Y": 14.999961853027344,
-					"Z": -0.000152587890625
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -14.99993896484375,
+					"Y": 184.9998779296875,
+					"Z": -0.0001544952392578125
 				}
 			}
 		},
@@ -2520,20 +2420,14 @@
 		{
 			"ID": "4adc3d94428d2e4a559f5999fc30a43b",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9b2b55bd407890d481a4debb90c7d1c1",
+			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"IsActive": false,
 			"Name": "hit point2",
 			"Transform": {
 				"Translation": {
-					"X": 185.00003051757813,
-					"Y": -14.999900817871094,
-					"Z": -0.0000820159912109375
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 14.999916076660156,
+					"Y": 185.00003051757813,
+					"Z": -0.00008392333984375
 				}
 			}
 		},
@@ -2569,20 +2463,14 @@
 		{
 			"ID": "e2f97fd04e600ecb59406fbeafc169bf",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9b2b55bd407890d481a4debb90c7d1c1",
+			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"IsActive": false,
 			"Name": "hit point3",
 			"Transform": {
 				"Translation": {
-					"X": 184.99981689453125,
-					"Y": -29.999893188476563,
-					"Z": -0.0001373291015625
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 29.999900817871094,
+					"Y": 184.99981689453125,
+					"Z": -0.000133514404296875
 				}
 			}
 		},
@@ -2618,20 +2506,14 @@
 		{
 			"ID": "f34561cd414ca056a4f4c594448714f9",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9b2b55bd407890d481a4debb90c7d1c1",
+			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"IsActive": false,
 			"Name": "hit point4",
 			"Transform": {
 				"Translation": {
-					"X": 185.0000762939453,
-					"Y": 29.99994659423828,
-					"Z": -0.00009918212890625
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -29.999923706054688,
+					"Y": 185.0000762939453,
+					"Z": -0.000102996826171875
 				}
 			}
 		},
@@ -2667,20 +2549,14 @@
 		{
 			"ID": "b8f94532442dbbbbbf20bfadd1561604",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9b2b55bd407890d481a4debb90c7d1c1",
+			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"IsActive": false,
 			"Name": "hit point5",
 			"Transform": {
 				"Translation": {
-					"X": 185.0000762939453,
-					"Y": 44.99979019165039,
-					"Z": -0.0001621246337890625
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -44.9997673034668,
+					"Y": 185.0000762939453,
+					"Z": -0.0001678466796875
 				}
 			}
 		},
@@ -2716,20 +2592,14 @@
 		{
 			"ID": "1b0793db489d4dff15b80aaee93490b4",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "9b2b55bd407890d481a4debb90c7d1c1",
+			"ParentID": "90e74e6742ce9b523937dfb519990cb0",
 			"IsActive": false,
 			"Name": "hit point6",
 			"Transform": {
 				"Translation": {
-					"X": 184.99984741210938,
-					"Y": -44.999755859375,
-					"Z": 0.000049591064453125
-				},
-				"Orientation": {
-					"X": 1.4901161193847656e-8,
-					"Y": 2.9802322387695313e-8,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 44.99977111816406,
+					"Y": 184.99984741210938,
+					"Z": 0.0000457763671875
 				}
 			}
 		},
@@ -3235,7 +3105,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"V": {
-	"portalRB": "51d52c30420d713ea6aa3ca00c689161"
+	"portalRB": "51d52c30420d713ea6aa3ca00c689161",
+	"sanityDamage": 2
 }
 		},
 		{
@@ -3263,20 +3134,14 @@
 		{
 			"ID": "ecff362f4247978575c558849103364b",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
+			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"IsActive": false,
 			"Name": "hit point0",
 			"Transform": {
 				"Translation": {
-					"X": 185.00009155273438,
-					"Y": -0.000041961669921875,
-					"Z": 0.00008392333984375
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 0.0000324249267578125,
+					"Y": 185.00006103515625,
+					"Z": 0.000072479248046875
 				}
 			}
 		},
@@ -3312,20 +3177,14 @@
 		{
 			"ID": "420be9024cedc9e7e09c8d88728314f7",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
+			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"IsActive": false,
 			"Name": "hit point1",
 			"Transform": {
 				"Translation": {
-					"X": 185.00003051757813,
-					"Y": 14.999971389770508,
-					"Z": 0.000064849853515625
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -14.999980926513672,
+					"Y": 184.99998474121094,
+					"Z": 0.00005340576171875
 				}
 			}
 		},
@@ -3361,20 +3220,14 @@
 		{
 			"ID": "4cf2bafb4ac373139822d5a02ad10871",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
+			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"IsActive": false,
 			"Name": "hit point2",
 			"Transform": {
 				"Translation": {
-					"X": 185.00013732910156,
-					"Y": -15.000057220458984,
-					"Z": 0.000102996826171875
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 15.000045776367188,
+					"Y": 185.00010681152344,
+					"Z": 0.000087738037109375
 				}
 			}
 		},
@@ -3410,20 +3263,14 @@
 		{
 			"ID": "0f0275694198b609425812b2e64243a4",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
+			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"IsActive": false,
 			"Name": "hit point3",
 			"Transform": {
 				"Translation": {
-					"X": 185.0001983642578,
-					"Y": -30.000070571899414,
-					"Z": 0.0001220703125
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 30.00005531311035,
+					"Y": 185.0001678466797,
+					"Z": 0.000110626220703125
 				}
 			}
 		},
@@ -3459,20 +3306,14 @@
 		{
 			"ID": "ffdbeafc473a3b1c18ecc787e5d27e5a",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
+			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"IsActive": false,
 			"Name": "hit point4",
 			"Transform": {
 				"Translation": {
-					"X": 184.99996948242188,
-					"Y": 29.999984741210938,
-					"Z": 0.000049591064453125
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -29.99999237060547,
+					"Y": 184.9999237060547,
+					"Z": 0.000034332275390625
 				}
 			}
 		},
@@ -3508,20 +3349,14 @@
 		{
 			"ID": "d8d668c241890901a9b209bb16881b0a",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
+			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"IsActive": false,
 			"Name": "hit point5",
 			"Transform": {
 				"Translation": {
-					"X": 184.99990844726563,
-					"Y": 45.0,
-					"Z": 0.000030517578125
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -45.00000762939453,
+					"Y": 184.9998779296875,
+					"Z": 0.0000152587890625
 				}
 			}
 		},
@@ -3557,20 +3392,14 @@
 		{
 			"ID": "041ff0c7452e5910b3bafbb56a74c41c",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "a1d56ee54ef4c4d4117dc9b6b207b13d",
+			"ParentID": "c4ce4bb84b0c7adf86d5d8952c199ca3",
 			"IsActive": false,
 			"Name": "hit point6",
 			"Transform": {
 				"Translation": {
-					"X": 185.000244140625,
-					"Y": -45.000083923339844,
-					"Z": 0.0001373291015625
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 45.00006866455078,
+					"Y": 185.00022888183594,
+					"Z": 0.000125885009765625
 				}
 			}
 		},
@@ -3626,7 +3455,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"V": {
-	"portalRB": "51d52c30420d713ea6aa3ca00c689161"
+	"portalRB": "51d52c30420d713ea6aa3ca00c689161",
+	"healthDamage": 1
 }
 		},
 		{
@@ -3654,20 +3484,14 @@
 		{
 			"ID": "0b498a7d4c3a846f4a90ac8047c71582",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "0a29307e490bf2671066d281e889f82b",
+			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"IsActive": false,
 			"Name": "hit point0",
 			"Transform": {
 				"Translation": {
-					"X": 185.0001220703125,
-					"Y": -0.000034332275390625,
-					"Z": -0.000030517578125
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 0.0000247955322265625,
+					"Y": 185.00009155273438,
+					"Z": -0.0000457763671875
 				}
 			}
 		},
@@ -3703,20 +3527,14 @@
 		{
 			"ID": "6d9006e7427e7a8de6f8fd9c2cc3aced",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "0a29307e490bf2671066d281e889f82b",
+			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"IsActive": false,
 			"Name": "hit point1",
 			"Transform": {
 				"Translation": {
-					"X": 185.0000762939453,
-					"Y": 14.999857902526855,
-					"Z": -0.000049591064453125
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -14.99986743927002,
+					"Y": 185.0000457763672,
+					"Z": -0.00006103515625
 				}
 			}
 		},
@@ -3752,20 +3570,14 @@
 		{
 			"ID": "51c607b64dd683f54f49ef891f3ec843",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "0a29307e490bf2671066d281e889f82b",
+			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"IsActive": false,
 			"Name": "hit point2",
 			"Transform": {
 				"Translation": {
-					"X": 185.00018310546875,
-					"Y": -15.000049591064453,
-					"Z": -0.000011444091796875
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 15.000038146972656,
+					"Y": 185.00013732910156,
+					"Z": -0.000026702880859375
 				}
 			}
 		},
@@ -3801,20 +3613,14 @@
 		{
 			"ID": "c9fd864b4ffa06d88d0088bc4a07d477",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "0a29307e490bf2671066d281e889f82b",
+			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"IsActive": false,
 			"Name": "hit point3",
 			"Transform": {
 				"Translation": {
-					"X": 185.00021362304688,
-					"Y": -29.99994468688965,
-					"Z": 0.000003814697265625
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 29.999929428100586,
+					"Y": 185.00018310546875,
+					"Z": -0.00000762939453125
 				}
 			}
 		},
@@ -3850,20 +3656,14 @@
 		{
 			"ID": "7ac62f1b43f271a3c40da388abc69378",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "0a29307e490bf2671066d281e889f82b",
+			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"IsActive": false,
 			"Name": "hit point4",
 			"Transform": {
 				"Translation": {
-					"X": 185.0000762939453,
-					"Y": 29.9998779296875,
-					"Z": -0.00018310546875
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -29.99988555908203,
+					"Y": 185.00003051757813,
+					"Z": -0.0001983642578125
 				}
 			}
 		},
@@ -3899,20 +3699,14 @@
 		{
 			"ID": "23cb4e4e478ce8ff0ae6bf9e8b21da3d",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "0a29307e490bf2671066d281e889f82b",
+			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"IsActive": false,
 			"Name": "hit point5",
 			"Transform": {
 				"Translation": {
-					"X": 184.99996948242188,
-					"Y": 44.99988555908203,
-					"Z": -0.00008392333984375
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": -44.99989318847656,
+					"Y": 184.99993896484375,
+					"Z": -0.00009918212890625
 				}
 			}
 		},
@@ -3948,20 +3742,14 @@
 		{
 			"ID": "e7101adc4434e258d48bcf825999260c",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "0a29307e490bf2671066d281e889f82b",
+			"ParentID": "6a7a15314dde9ebdbfdcc59fe10ec0e3",
 			"IsActive": false,
 			"Name": "hit point6",
 			"Transform": {
 				"Translation": {
-					"X": 185.00022888183594,
-					"Y": -44.999961853027344,
-					"Z": 0.0001373291015625
-				},
-				"Orientation": {
-					"X": -2.7939677238464355e-8,
-					"Y": 0.0,
-					"Z": -0.7071068286895752,
-					"W": 0.7071068286895752
+					"X": 44.99994659423828,
+					"Y": 185.00021362304688,
+					"Z": 0.000125885009765625
 				}
 			}
 		},
@@ -4467,7 +4255,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "c380ab694581ed819029cd941da6e7af",
 			"V": {
-	"portalRB": "5b02c7194c525e93e725bfb9525a03b9"
+	"portalRB": "5b02c7194c525e93e725bfb9525a03b9",
+	"sanityDamage": 2
 }
 		},
 		{
@@ -4858,7 +4647,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "26f1c35c4afb7f94bca8fba0b3beaa71",
 			"V": {
-	"portalRB": "5b02c7194c525e93e725bfb9525a03b9"
+	"portalRB": "5b02c7194c525e93e725bfb9525a03b9",
+	"healthDamage": 1
 }
 		},
 		{
@@ -5699,7 +5489,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "486f902547eebb0e0cafdeb954f9aedd",
 			"V": {
-	"portalRB": "ba5bdab0451492513d08b394b8488daf"
+	"portalRB": "ba5bdab0451492513d08b394b8488daf",
+	"sanityDamage": 2
 }
 		},
 		{
@@ -6090,7 +5881,8 @@
 			"TypeName": "Game.EnemyScript",
 			"ParentID": "1eaff2db4992955db63dfbbd4c1e876a",
 			"V": {
-	"portalRB": "ba5bdab0451492513d08b394b8488daf"
+	"portalRB": "ba5bdab0451492513d08b394b8488daf",
+	"healthDamage": 1
 }
 		},
 		{
@@ -7614,7 +7406,6 @@
 			"ID": "8e8397ee4bfdd37f5e90f48f9e6f0dcd",
 			"TypeName": "FlaxEngine.UIControl",
 			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
-			"IsActive": false,
 			"Name": "StartButton",
 			"Transform": {
 				"Translation": {
@@ -7733,7 +7524,7 @@
 	},
 	"BackgroundBrush": null,
 	"Enabled": true,
-	"Visible": false,
+	"Visible": true,
 	"AutoFocus": true
 }
 		},
@@ -8223,6 +8014,1438 @@
 		"Right": 30.0,
 		"Top": 0.0,
 		"Bottom": 30.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "98dbde5b4ccda2d40b46c7877fdecbbb",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "health",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 30.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "3915b94647cbb9fd64dd8897e69e652d",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 30.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "86bbb20f44451e4e1f637c965dfb74ae",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "98dbde5b4ccda2d40b46c7877fdecbbb",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "7",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "41337a6f47d1e3902fa2f6adedb22abc",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "sanity",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 70.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "72cfc7f14e19f51cbcbd649b802f996e",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 70.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "c088b056400146ea4e2f718abeb93eb4",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "41337a6f47d1e3902fa2f6adedb22abc",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "7",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "1a031d174c00784bfb63f7834d3a6f47",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "strength",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 110.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "82040f11421b078d1f4c519eda8edf64",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 110.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "155e8b6449080896877085bae108c5a7",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "1a031d174c00784bfb63f7834d3a6f47",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "7",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "30aaae2441f4243c74da539ea149ea2d",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "lore",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 150.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "7557813444518a4cb0e8428d38a28374",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 150.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "69fbf2774cc916e2fb8d088b47be478d",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "30aaae2441f4243c74da539ea149ea2d",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "7",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "df9737c1427aaf8d37139595b2469454",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "influence",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 190.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "563736144e4eb340c2e2c08a5d484daa",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 190.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "90fce6ef40c50bf0ba928d92ce003b0d",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "df9737c1427aaf8d37139595b2469454",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "7",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "67082c224619babeded8a8aa34374ded",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "observation",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 230.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "84d8471040da569ec2d8f89bb577417e",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 230.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "cb6e86c746299679b006adbe55685821",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "67082c224619babeded8a8aa34374ded",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "7",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "9c3a3fa64e5fe0fccfec14be9500bcd6",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "will",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 270.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "1f49a49e4e60a334a829c98e9656cb99",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 270.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "be97c58242eb46a2a802b58fccfc979d",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "9c3a3fa64e5fe0fccfec14be9500bcd6",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "7",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "556b2c0d47c7b58b6e808eac02e4e403",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "dd3412fc479809e98ec828bd1c300a75",
+			"Name": "portalsClosed",
+			"Transform": {
+				"Translation": {
+					"X": 30.0,
+					"Y": 320.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Image",
+			"Data": {
+	"Brush": {
+		"$type": "FlaxEngine.GUI.TextureBrush, FlaxEngine.CSharp",
+		"Texture": "7e4fc6a54b2285804f499bb9e7f7c999",
+		"Filter": 1
+	},
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"Color": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"MouseOverColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"DisabledTint": {
+		"R": 0.5019608,
+		"G": 0.5019608,
+		"B": 0.5019608,
+		"A": 1.0
+	},
+	"KeepAspectRatio": true,
+	"ClipChildren": false,
+	"CullChildren": false,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 30.0,
+		"Right": 40.0,
+		"Top": 320.0,
+		"Bottom": 40.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.5,
+		"Y": 0.5
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "a313071043ce92375fdd9cba99e042b9",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "556b2c0d47c7b58b6e808eac02e4e403",
+			"Name": "label",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 0.0,
+					"Z": 0.0
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "0",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 0.57964605,
+		"G": 0.7058824,
+		"B": 0.52893317,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 1,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "ab96b25a49461d9f4f819484cf5c8213",
+		"Size": 26.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"AnchorMax": {
+		"X": 1.0,
+		"Y": 0.5
+	},
+	"Offsets": {
+		"Left": 0.0,
+		"Right": 40.0,
+		"Top": -20.0,
+		"Bottom": 40.0
 	},
 	"Scale": {
 		"X": 1.0,
@@ -8966,7 +10189,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9003,7 +10226,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9040,7 +10263,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9111,7 +10334,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9148,7 +10371,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9185,7 +10408,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9256,7 +10479,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9293,7 +10516,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9330,7 +10553,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9401,7 +10624,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9438,7 +10661,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9475,7 +10698,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9546,7 +10769,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9583,7 +10806,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9620,7 +10843,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9691,7 +10914,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9728,7 +10951,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9765,7 +10988,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9836,7 +11059,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9873,7 +11096,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9910,7 +11133,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -9981,7 +11204,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10018,7 +11241,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10055,7 +11278,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10126,7 +11349,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10163,7 +11386,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10200,7 +11423,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10271,7 +11494,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10308,7 +11531,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10345,7 +11568,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10416,7 +11639,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10453,7 +11676,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -10490,7 +11713,7 @@
 			"Buffer": {
 				"Entries": [
 					{
-						"Material": "00000000000000000000000000000000",
+						"Material": "923408a344c1d168159631b5863955f7",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true

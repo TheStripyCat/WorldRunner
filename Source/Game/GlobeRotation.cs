@@ -10,19 +10,20 @@ namespace Game;
 /// </summary>
 public class GlobeRotation : Script
 {
-    private float runSpeed, turnSpeed, mouseInput, hInput, frwRotation, landSpeed = 8f, waterSpeed = 6f, railroadSpeed = 12f, shipSpeed = 10f,
+    private float runSpeed, turnSpeed, mouseInput, hInput, frwRotation, landSpeed = 6f, waterSpeed = 5f, railroadSpeed = 8f, shipSpeed = 8f,
         landTurnSpeed = 4f, waterTurnSpeed = 3f, railroadTurnSpeed = 6f, shipTurnSpeed = 5f;
     
     private bool weAreRunning = false;
     private AnimGraphParameter isRunning, isDead;
     [Serialize, ShowInEditor] Actor player;
-    [Serialize, ShowInEditor] UIControl startButton, shipTicketIcon, trainTicketIcon;
+    [Serialize, ShowInEditor] UIControl startButton, shipTicketIcon, trainTicketIcon, healthUI, sanityUI, strengthUI, loreUI, influenceUI,
+        observationUI, willUI, portalsClosedUI;
     [Serialize, ShowInEditor] Collider playerTrigger;
     public Actor portalToClose;
     public Quaternion returnOrientation;
     private int eyesCollected = 0;
     private bool hasTrainTicket, hasShipTicket, landHasRailroads, inTheSea;
-    public int health = 7, sanity = 7, lore = 1, strength = 1, influence = 1, observation = 2, maxHealth, maxSanity, will = 1;
+    public int health = 7, sanity = 7, lore = 1, strength = 1, influence = 1, observation = 2, maxHealth, maxSanity, will = 1, portalsClosed = 0;
     public override void OnStart()
     {
         //Screen.CursorLock = CursorLockMode.Locked;
@@ -38,6 +39,7 @@ public class GlobeRotation : Script
         isRunning = player.As<AnimatedModel>().GetParameter("isRunning");
         isDead = player.As<AnimatedModel>().GetParameter("isDead");
         playerTrigger.TriggerEnter += OnTriggerEnter;
+        UpdateUI();
     }
 
     /// <inheritdoc/>
@@ -75,6 +77,13 @@ public class GlobeRotation : Script
                 }
             }
         }
+        UpdateUI();
+        if ((health <= 0) || (sanity <= 0))
+        {
+            weAreRunning = false;
+            isDead.Value = true;
+        }
+
     }
     private void StartRunning()
     {
@@ -139,21 +148,9 @@ public class GlobeRotation : Script
         else if (collider.HasTag("danger"))
         {
             health--;
-            if (health == 0)
-            {
-                weAreRunning = false;
-                isDead.Value = true;
-            }
-        }
-        else if (collider.HasTag("enemy"))
-        {
-            health -= collider.Parent.GetScript<EnemyScript>().healthDamage;
-            if ((collider.Parent.GetScript<EnemyScript>().sanityDamage - will)>0)
-            {
-                sanity -= (collider.Parent.GetScript<EnemyScript>().sanityDamage - will);
-            }
-            
-            if ((health <= 0) || (sanity <= 0))
+            //Debug.Log("player health " + health);
+            healthUI.Get<Label>().Text = Convert.ToString(health);
+            if (health <= 0)
             {
                 weAreRunning = false;
                 isDead.Value = true;
@@ -169,7 +166,26 @@ public class GlobeRotation : Script
                 portalToClose.Parent.GetScript<POIScript>().hasPortal = false;
                 Actor.Position = new Vector3(0, 0, 0);
                 Actor.Orientation = returnOrientation;
+                portalsClosed++;
+                eyesCollected = 0;
             }
         }
+        
+            
+            
+            
+        
+        
+    }
+    private void UpdateUI()
+    {
+        healthUI.Get<Label>().Text = Convert.ToString(health);
+        sanityUI.Get<Label>().Text = Convert.ToString(sanity);
+        strengthUI.Get<Label>().Text = Convert.ToString(strength);
+        loreUI.Get<Label>().Text = Convert.ToString(lore);
+        influenceUI.Get<Label>().Text = Convert.ToString(influence);
+        observationUI.Get<Label>().Text = Convert.ToString(observation);
+        willUI.Get<Label>().Text = Convert.ToString(will);
+        portalsClosedUI.Get<Label>().Text = Convert.ToString(portalsClosed);
     }
 }
