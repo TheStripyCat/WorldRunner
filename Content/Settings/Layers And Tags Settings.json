@@ -13,8 +13,10 @@
 		"railway",
 		"shipTicket",
 		"skill",
+		"spell",
 		"trainTicket",
-		"water"
+		"water",
+		"weapon"
 	],
 	"Layers": [
 		"Default",

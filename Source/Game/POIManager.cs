@@ -10,10 +10,10 @@ namespace Game;
 public class POIManager : Script
 {
     [Serialize, ShowInEditor] List<Actor> allCities;
-    private int maxPortals, portalsOpened, randomPOI, randomEnemy, enemyHealth;
-    private float timer;
-    private POIScript poiScript;
-    private bool poiFound = false;
+    private int maxPortals, portalsOpened, randomPOI, randomEnemy, enemyHealth, randomItemPOI, randomItem;
+    private float portalTimer, itemTimer;
+    private POIScript poiScript, itemPOIScript;
+    public bool gameStarted;
     public override void OnStart()
     {
         maxPortals = allCities.Count;
@@ -41,32 +41,48 @@ public class POIManager : Script
     /// <inheritdoc/>
     public override void OnUpdate()
     {
-        timer += Time.DeltaTime;
-        if ((timer >= 60f) && (portalsOpened < maxPortals))
+        if (gameStarted)
         {
-            OpenPortal();
+            portalTimer += Time.DeltaTime;
+            itemTimer += Time.DeltaTime;
+            if ((portalTimer >= 120f) && (portalsOpened < maxPortals))
+            {
+                OpenPortal();
+            }
+            else if ((portalTimer >= 60f) && (portalsOpened == maxPortals)) Debug.Log("gameover");
+
+            if ((itemTimer >= 20f) && (portalsOpened < maxPortals))
+            {
+                SpawnItem();
+            }
         }
-        else if ((timer >= 60f) && (portalsOpened == maxPortals)) Debug.Log("gameover");
     }
     private void OpenPortal()
     {
-        if (!poiFound)
-        {
             randomPOI = RandomUtil.Random.Next(0, maxPortals);
             poiScript = allCities[randomPOI].GetScript<POIScript>();
             if (!poiScript.portal.IsActive)
             {
                 poiScript.portal.IsActive = true;
-                poiScript.itemSpawn.IsActive = false;
-                poiFound = true;
+                poiScript.itemSpawn.IsActive = false;                
                 portalsOpened++;
                 poiScript.hasPortal = true;
                 randomEnemy = RandomUtil.Random.Next(0, poiScript.enemies.Count);
-                poiScript.enemies[randomEnemy].IsActive = true;                
-                poiFound = false;
-                timer = 0f;
-            }
-        }      
+                poiScript.enemies[randomEnemy].IsActive = true;
+                portalTimer = 0f;
+            }        
         
+    }
+    private void SpawnItem()
+    {
+        randomItemPOI = RandomUtil.Random.Next(0, maxPortals);
+        itemPOIScript = allCities[randomItemPOI].GetScript<POIScript>();
+        if ((!itemPOIScript.portal.IsActive)&&(!itemPOIScript.hasItem))
+        {
+            randomItem = RandomUtil.Random.Next(0, itemPOIScript.skills.Count);
+            itemPOIScript.skills[randomItem].IsActive = true;
+            itemPOIScript.hasItem = true;
+            itemTimer = 0f;
+        }
     }
 }

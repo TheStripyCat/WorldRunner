@@ -17,13 +17,15 @@ public class GlobeRotation : Script
     private AnimGraphParameter isRunning, isDead;
     [Serialize, ShowInEditor] Actor player;
     [Serialize, ShowInEditor] UIControl startButton, shipTicketIcon, trainTicketIcon, healthUI, sanityUI, strengthUI, loreUI, influenceUI,
-        observationUI, willUI, portalsClosedUI;
+        observationUI, willUI, portalsClosedUI, weaponUI, spellUI;
     [Serialize, ShowInEditor] Collider playerTrigger;
+    [Serialize, ShowInEditor] POIManager poiManager;
     public Actor portalToClose;
     public Quaternion returnOrientation;
     private int eyesCollected = 0;
     private bool hasTrainTicket, hasShipTicket, landHasRailroads, inTheSea;
-    public int health = 7, sanity = 7, lore = 1, strength = 1, influence = 1, observation = 2, maxHealth, maxSanity, will = 1, portalsClosed = 0;
+    public int health = 7, sanity = 7, lore = 1, strength = 1, influence = 1, observation = 2, maxHealth, maxSanity, will = 1, portalsClosed = 0,
+        weapon = 0, spell = 0;
     public override void OnStart()
     {
         //Screen.CursorLock = CursorLockMode.Locked;
@@ -91,17 +93,18 @@ public class GlobeRotation : Script
         weAreRunning = true;
         Screen.CursorLock = CursorLockMode.Locked;
         Screen.CursorVisible = false;
+        poiManager.gameStarted = true;
         startButton.IsActive = false;
     }
     private void OnTriggerEnter(PhysicsColliderActor collider)
     {
-         if (collider.HasTag("railway"))
-         {
+        if (collider.HasTag("railway"))
+        {
             runSpeed = landSpeed;
             turnSpeed = landTurnSpeed;
             landHasRailroads = true;
-            inTheSea = false;            
-         }
+            inTheSea = false;
+        }
         else if (collider.HasTag("land"))
         {
             runSpeed = landSpeed;
@@ -131,6 +134,7 @@ public class GlobeRotation : Script
             influence += collider.Parent.GetScript<SkillScript>().influence;
             observation += collider.Parent.GetScript<SkillScript>().observation;
             lore += collider.Parent.GetScript<SkillScript>().lore;
+
             if (health > maxHealth)
             {
                 health = maxHealth;
@@ -144,6 +148,18 @@ public class GlobeRotation : Script
                 collider.Parent.IsActive = false;
                 collider.Parent.Parent.Parent.GetScript<POIScript>().hasItem = false;
             }
+        }
+        else if (collider.HasTag("weapon"))
+        {
+            weapon = influence;
+            weaponUI.IsActive = true;
+            weaponUI.GetChild<UIControl>().Get<Label>().Text = Convert.ToString(weapon);
+
+        }
+        else if (collider.HasTag("spell"))
+        {
+            spell = influence;
+            spellUI.GetChild<UIControl>().Get<Label>().Text = Convert.ToString(spell);
         }
         else if (collider.HasTag("danger"))
         {
