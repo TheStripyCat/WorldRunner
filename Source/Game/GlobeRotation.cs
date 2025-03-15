@@ -154,12 +154,17 @@ public class GlobeRotation : Script
             weapon = influence;
             weaponUI.IsActive = true;
             weaponUI.GetChild<UIControl>().Get<Label>().Text = Convert.ToString(weapon);
+            collider.Parent.IsActive = false;
+            collider.Parent.Parent.Parent.GetScript<POIScript>().hasItem = false;
 
         }
         else if (collider.HasTag("spell"))
         {
             spell = influence;
+            spellUI.IsActive = true;
             spellUI.GetChild<UIControl>().Get<Label>().Text = Convert.ToString(spell);
+            collider.Parent.IsActive = false;
+            collider.Parent.Parent.Parent.GetScript<POIScript>().hasItem = false;
         }
         else if (collider.HasTag("danger"))
         {
