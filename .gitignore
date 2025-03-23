@@ -43,15 +43,4 @@ _ReSharper*/
 
 # Ignore Nuget packages folder
 packages/
-Content/main character temp.flax
-Content/idle anim.flax
-Content/run anim.flax
-Content/POIs/Temple.flax
-Content/POIs/Temple/door handle.flax
-Content/POIs/Temple/marine roof.flax
-Content/POIs/Temple/RedWood.flax
-Content/POIs/Temple/RedWoodPlanks_albedo.flax
-Content/POIs/Temple/RedWoodPlanks_normal.flax
-Content/POIs/Temple/roof.flax
-Content/POIs/Temple/rope.flax
-Content/POIs/Temple/white.flax
+
